@@ -1,0 +1,26 @@
+.tttevents-content .content {
+	padding: 10px;
+	margin-bottom: 10px;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	background: rgb(231, 231, 231);
+}
+.tttevents-content input {
+	width: 100%;
+}
+.tttevents-content .date {
+	max-width: 50%;
+	min-width: 200px;
+	display: inline-block;
+}
+.tttevents-content .date input {
+	font-weight: bold;
+}
+.ui-timepicker-div > dl > dt,
+.ui-timepicker-div > dl > dd {
+	display: inline-block;
+}
+.ui-timepicker-div > dl > dd {
+	margin-left: 10px;
+	margin-right: 60px;
+}
