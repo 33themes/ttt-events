@@ -19,7 +19,7 @@
 			<label><?php _e('End at',parent::sname); ?></label>
 			<input name="tttevent[<%=id%>][end_at]" class="text" type="text" value="<%=end_at%>" />
 		</div>
-		<?php echo apply_filters('tttevent_meta_extra_template'); ?>
+		<?php echo apply_filters('tttevent_meta_extra_template',true); ?>
 		<a class="button tttevents-invoke-remove"><?php _e('Remove event',parent::sname); ?></a>
 	</div>
 </div>

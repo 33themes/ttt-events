@@ -94,17 +94,19 @@ class TTTEvents_Admin extends TTTEvents_Common {
 			'description' => ''
 		);
 
-		if ( $extras = apply_filters('tttevent_meta_extra_vars') ) {
+		if ( $extras = apply_filters('tttevent_meta_extra_vars', $defaults) ) {
 			foreach( $extras as $key => $value ) {
 				$defaults[ $key ] = $value;
-			}
-			foreach ($post_meta as $i => $meta ) {
-				if (is_array( $extras )) {
-					foreach( $extras as $key => $value ) {
-						if ( !isset($post_meta[$i][$key] )) $post_meta[$i][$key] = $value;
-					}
-				}
-			}
+            }
+            if (is_array($post_meta)) {
+                foreach ($post_meta as $i => $meta ) {
+                    if (is_array( $extras )) {
+                        foreach( $extras as $key => $value ) {
+                            if ( !isset($post_meta[$i][$key] )) $post_meta[$i][$key] = $value;
+                        }
+                    }
+                }
+            }
 		}
 
 		wp_enqueue_style(  'ttt-events-metabox-css-ui', plugins_url('template/admin/jquery-ui-themes/themes/ui-darkness/jquery-ui.min.css' , dirname(__FILE__) ) );
